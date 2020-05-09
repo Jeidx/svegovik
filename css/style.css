@@ -24,6 +24,8 @@
    
 }
 .human-head{
+    position: relative;
+    z-index: 3;
     margin: 0 auto;
     grid-column: 2/3;
     grid-row: 1/2;
@@ -32,11 +34,35 @@
     height: 60%;
     width: 60%;
     margin-top: 60px;
-    animation:  head 4s linear 0s infinite;
-   
+    animation:  head 8s linear 0s infinite;
+    box-shadow: inset 0px 0px 29px -10px rgba(0,0,0,0.53);
+    bottom: -7px;
 
 }
+.head__left-glass{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(75, 73, 73);
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    animation:  left-glass 8s linear 0s infinite ;
+}
+.head__right-glass{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(75, 73, 73);
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    right: 30%;
+    animation:  right-glass 8s linear 0s infinite ;
+}
+
 .human-body{
+   bottom: -5px;
+    z-index: 2;
     margin: 20px auto 0;
     grid-column:2/3 ;
     grid-row:2/3 ;
@@ -44,61 +70,169 @@
     border-radius: 50%;
     height: 80%;
     width: 80%;
-    animation:  body 4s linear 0s infinite ;
-    
+    animation:  body 8s linear 0s infinite ;
+    position: relative;
+    box-shadow: inset 0px 0px 29px -10px rgba(0,0,0,0.53);
 }
 .human-leg{
     grid-column:2/3 ;
     grid-row: 3/4;
     background-color:rgb(255, 255, 255);
-    border-radius: 50%;
+    border-radius: 200px 200px 186px 186px;
+    box-shadow: inset 0px 0px 29px -10px rgba(0,0,0,0.53);
 }
 @keyframes head { 
 
-    10%{
-        transform: translate(8px , 1px);
-    }
-    15%{
-        transform: translate(10px , 2px);
+    25%{
+        border-radius:50%;
+        transform: translate(32px , 8px);
+        box-shadow: inset 9px 0px 29px -10px rgba(0,0,0,0.53);
       
     }
-    30%{
-        transform: translate(17px , 3px);
-    }
-
     50%{
-        transform: translate(22px , 4px);
-       
+        border-radius:50%;
+        transform: translate(0px , 0px);
+        box-shadow: inset 0px 0px 29px -10px rgba(0,0,0,0.53);
     }
     75%{
-        transform: translate(28px , 6px);
-       
+        border-radius:50%;
+        transform: translate(-32px , 8px);
+        box-shadow: inset -10px 10px 38px -23px rgba(0,0,0,0.53);
     }
-
-    100%{
-        transform: translate(34px , 8px);
        
-    }
 }
 
 @keyframes body { 
     
-
     25%{
-        transform: translate(5px , 1px);
-  
-    }
-
-    50%{
-        transform: translate(8px , 2px);
+        border-radius: 200px 200px 186px 186px;
+        transform: translate(12px , 4px);
+        box-shadow: inset 9px 0px 29px -10px rgba(0,0,0,0.53);
        
+
+    }
+    50%{
+        transform: translate(0px , 0px);
+        box-shadow: inset 0px 0px 29px -10px rgba(0,0,0,0.53);
     }
     75%{
-        transform: translate(10px , 3px);
+        border-radius: 200px 200px 186px 186px;
+        transform: translate(-12px , 4px);
+        box-shadow: inset -10px 10px 38px -23px rgba(0,0,0,0.53);
+
     }
 
-    100%{
-        transform: translate(12px , 4px);
-      
+}
+@keyframes button1 { 
+
+    25%{
+        transform: translate(6px , 4px);
+        
+       
     }
+    50%{
+        transform: translate(0px , 0px);
+    }
+    75%{
+        transform: translate(-4px , 4px);
+       
+    }
+
+
+}
+@keyframes button2 { 
+
+    25%{
+        transform: translate(3px , 4px);
+       
+    }
+    50%{
+        transform: translate(0px , 0px);
+    }
+    75%{
+        transform: translate(-3px , 4px);
+       
+    }
+
+
+}
+@keyframes button3 { 
+
+    25%{
+        transform: translate(1px , 5px);
+       
+    }
+    50%{
+        transform: translate(0px , 0px);
+    }
+    75%{
+        transform: translate(-1px , 5px);
+       
+    }
+
+
+}
+
+@keyframes left-glass { 
+    25%{
+        transform: translate(0px , 2px);
+       
+    }
+    50%{
+        transform: translate(0px , 0px);
+    }
+    75%{
+        transform: translate(0px , 7px);
+       
+    }
+
+}
+@keyframes right-glass { 
+    25%{
+        transform: translate(0px , 7px);
+       
+    }
+    50%{
+        transform: translate(0px , 0px);
+    }
+    75%{
+        transform: translate(0px , 2px);
+       
+    }
+
+}
+
+.human-body div:nth-child(1){
+    width: 4px;
+    height: 4px;
+    background-color: rgb(75, 73, 73);
+    border-radius: 50%;
+    position: absolute;
+    top: 26px;
+    left: calc(50% - 2px);
+    animation: button1  8s linear 0s infinite ;
+    
+}
+.human-body div:nth-child(2){
+
+    top: 34px;
+    width: 4px;
+    height: 4px;
+    background-color: rgb(75, 73, 73);
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 2px);
+    animation: button2  8s linear 0s infinite 
+   
+}
+.human-body div:nth-child(3){
+    top: 42px;
+    width: 4px;
+    height: 4px;
+    background-color: rgb(75, 73, 73);
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 2px);
+    animation: button3  8s linear 0s infinite 
+   
 }
